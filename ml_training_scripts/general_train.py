@@ -8,11 +8,8 @@ from dataset_utils.aug_utils import color_jitter, cascade_functions, salty_noise
 from dataset_utils.md_utils import md_dataset
 from dataset_utils.mai_utils import mai_dataset
 from dataset_utils.phoneDepth_utils import phoneDepth_dataset, confidence_indeces
-from models.compileStrategies import compile_md_doubleDepth
-from models.models import depth_model, final_models_checkpoints, dir_name_from_name
+from models.models import depth_model 
 from misc import load_newest_weights, setup_log
-from dataset_utils.viz_utils import save_imgs_viz
-from depth_utils import preprocess_batch_mask
 from dataset_utils.aug_utils import random_crop_and_resize
 
 
@@ -33,11 +30,12 @@ dataset_paths = {'md': megadepth_basepath,  # Megadepth
                  'mai': mai_basepath,       # MAI
                 'mb': mb_basepath}          # PhoneDepth
 
+interm_shape = (480,  640)
+
 """------------------------------------- Modify parameters according to need ------------------------------------------"""
 dataset = 'md'
 # For Phone depth dataset (mb): "hua" or "pxl"
 phone = "hua"
-interm_shape = (480,  640)
 
 # mb_io_mode = 'img2depth'
 mb_io_mode = "img2projected"
@@ -48,7 +46,7 @@ mb_io_mode = "img2projected"
 
 dataset_path = dataset_paths[dataset]
 
-# Defined Models
+# Pick one of the defined models below
 # Trained on MAI and fine-tunned
 # model_name = "p_fastdepth_mai_224x224"
 # model_name = "p_parkmai_mai_224x224"
@@ -150,7 +148,7 @@ def main():
                                     batch_size=batch_size, random_flip=False,
                                     shuffle=False, num_parallel_calls=num_parallel_calls)
     
-    # From trianing location
+    # From training outputs location
     weight_base_dir = dataset_path / Path('networks')
     checkpoint_dir = weight_base_dir / Path(model_name)
     checkpoint_dir = checkpoint_dir.__str__()
