@@ -1,0 +1,8 @@
+plotting_results
+plotting/data
+
+.vscode
+
+**.jpg
+**.png
+**.npy
