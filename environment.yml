@@ -1,0 +1,13 @@
+name: tf-2.4.1n
+channels:
+  - conda-forge
+dependencies:
+  - python==3.8
+  - pip
+  - numpy==1.19.2
+  - tensorflow-gpu==2.4.1
+  - jupyterlab
+  - tqdm
+  - pip:
+    - tensorflow-addons
+
