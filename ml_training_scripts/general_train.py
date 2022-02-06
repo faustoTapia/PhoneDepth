@@ -24,10 +24,10 @@ naming_dict = {'img2depth': "I2D",
                }
 
 
-#change to your base directories here!
+# Change these variables to the location of the datasets in your Directory your base directories here!
 megadepth_basepath = Path('/srv/beegfs02/scratch/efficient_nn_mobile/data/MegaDepth_v1')
 mai_basepath = Path('/scratch_net/minga/tfausto/data/MAI2021_dataset')
-mb_basepath = Path('/scratch_net/minga/tfausto/data/FTDataset')
+mb_basepath = Path('/scratch_net/minga/tfausto/data/PhoneDepth')
 
 dataset_paths = {'md': megadepth_basepath,  # Megadepth
                  'mai': mai_basepath,       # MAI
