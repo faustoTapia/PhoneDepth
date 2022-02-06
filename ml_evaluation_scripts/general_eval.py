@@ -23,14 +23,14 @@ from dataset_utils.viz_utils import save_imgs_viz
 from depth_utils import preprocess_batch_mask
 from dataset_utils.aug_utils import random_crop_and_resize
 
-#change to your base directories here!
+# Change to your base directories where you stored hte datasets here!
 megadepth_basepath = Path('/srv/beegfs02/scratch/efficient_nn_mobile/data/MegaDepth_v1')
-mai_basepath = Path('/scratch_net/minga/tfausto/data/MAI2021_dataset')
-mb_basepath = Path('/scratch_net/minga/tfausto/data/FTDataset')
+mai_basepath = Path('/srv/beegfs02/scratch/efficient_nn_mobile/data/MAI2021_dataset')
+mb_basepath = Path('/srv/beegfs02/scratch/efficient_nn_mobile/data/PhoneDepth')
 
 # Change these directories as they are where you results will be stored.
-mai_storepath = Path('/srv/beegfs02/scratch/efficient_nn_mobile/data/MAI2021_dataset')
-mb_storepath = Path('/srv/beegfs02/scratch/efficient_nn_mobile/data/FTDataset')
+mai_storepath = mai_basepath
+mb_storepath = mb_basepath
 megadepth_storepath = megadepth_basepath
 
 dataset_paths = {'md': megadepth_basepath,
@@ -51,17 +51,17 @@ naming_dict = {'img2depth': "I2D",
 
 
 def main():
-    dataset = 'md'
-    pretrain_datset = 'md'
+    dataset = 'mb'
+    pretrain_datset = dataset
     cmap = 'viridis'
 
     has_pynet = False
 
     # mb_io_mode = 'img2depth'
-    mb_io_mode = "img2projected"
+    # mb_io_mode = "img2projected"
     # mb_io_mode = "img_depth2depth"
     # mb_io_mode = "img2depth_depth"
-    # mb_io_mode = "img_depth2depth_depth"
+    mb_io_mode = "img_depth2depth_depth"
     # mb_io_mode = None
     
     pre_training_dataset_store = dataset_store_paths[pretrain_datset]
@@ -90,7 +90,7 @@ def main():
     # model_name = "p_parkmai_md_224x224"             
     # model_name = "p_effiB4park_md_384x384"
     # model_name = "p_fastdepth_md_224x224_fineTuneMB"
-    model_name = "p_parkmai_md_224x224_fineTuneMB"
+    # model_name = "p_parkmai_md_224x224_fineTuneMB"
     # model_name = "p_effiB4park_md_384x384_fineTuneMB"
 
     # # For I2P and I2DP comparison.
@@ -103,16 +103,14 @@ def main():
 
     # # Depth enhancement.
     # model_name = "p_effiB4park_mbID2P_384x384"
-    # model_name = "p_effiB4park_mbID2DP_384x384"
+    model_name = "p_effiB4park_mbID2DP_384x384"
 
 
 
     # From trianing location
-    weight_base_dir = pre_training_dataset_store / Path('networks')
+    weight_base_dir = pre_training_dataset_store / Path('p_networks')
 
-    checkpoint_dir = weight_base_dir / Path(dir_name_from_name(model_name))
-    if has_pynet:
-        checkpoint_dir = checkpoint_dir / Path("level1")
+    checkpoint_dir = weight_base_dir / Path(model_name)
 
     checkpoint_dir = checkpoint_dir.__str__()
     batch_size = 1
@@ -121,8 +119,8 @@ def main():
     n_imgs = None
 
     start_img = 0
-    input_size = (224, 224, 3)
-    # input_size = (384, 384, 3)
+    # input_size = (224, 224, 3)
+    input_size = (384, 384, 3)
 
     dataset_type = 'test'   
     # dataset_type = 'val'
@@ -161,7 +159,7 @@ def main():
         raise ValueError("Invalid dataset.")
     
     # output_dir setup
-    output_dir = curr_dataset_store_path / Path('eval_outputs') / Path(model_name + '_' + cmap + '_'+ dataset_type)
+    output_dir = curr_dataset_store_path / Path('p_eval_outputs') / Path(model_name + '_' + cmap + '_'+ dataset_type)
     imgs_dir = output_dir / Path('inp-outs')
     if not imgs_dir.is_dir():
         Path.mkdir(imgs_dir, parents=True)

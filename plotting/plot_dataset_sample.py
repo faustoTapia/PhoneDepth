@@ -6,7 +6,7 @@ from matplotlib import pyplot as plt
 sys.path.append('./')
 from plotting.plotting_utils import data_frame_to_metric_dic
 from plotting.plotting_utils import plot_image_matrix
-from dataset_utils.mobileDepth_utils import load_data_list_from_file, IOModes
+from dataset_utils.phoneDepth_utils import load_data_list_from_file, IOModes
 from PIL import Image
 import numpy as np
 import random

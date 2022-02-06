@@ -486,6 +486,24 @@ def restructure_dataset(dataset_path, out_dataset_path):
 
     splits = ['test', 'train', 'val']
     phones = ['hua', 'pxl']
+    dict_keys_suffixes = ['img', 'depth', 'projected_conf', 'projected_depth']
+    dict_keys = [""]
+    dict_keys =  ['pxl_img', 'pxl_depth', 'pxl_projected_depth', 'pxl_projected_conf', 'hua_img', 'hua_depth', 'hua_projected_depth', 'hua_projected_conf']
+
+    # Creating data dictionaries
+    train_dict = {}
+    for dict_key in dict_keys:
+        train_dict[dict_key] = []
+    val_dict = {}
+    for dict_key in dict_keys:
+        val_dict[dict_key] = []
+    test_dict = {}
+    for dict_key in dict_keys:
+        test_dict[dict_key] = []
+
+    data_dicts = {"train": train_dict,
+                  "val": val_dict,
+                  "test": test_dict}
 
     for phone in phones:
         for split in splits:
@@ -509,11 +527,26 @@ def restructure_dataset(dataset_path, out_dataset_path):
             split_path.mkdir(parents=True)
 
             print("Started split " + split + " storing in: " + str(split_path))
-            for folder_name, stream_files in zip(stream_folder, data_list_whole):
+            for folder_name, stream_files, key_suffix in zip(stream_folder, data_list_whole, dict_keys_suffixes):
                 stream_path = split_path / folder_name
                 stream_path.mkdir()
                 for i, file in enumerate(stream_files):
                     in_file = Path(file)
                     out_file = stream_path / ("{:06d}".format(i) + "." + file.split(".")[-1])
                     shutil.copy(str(in_file), str(out_file))
+                    out_file_rel = out_file.relative_to(out_dataset_path)
+                    data_dicts[split][phone + "_" + key_suffix].append(str(out_file_rel))
             print("Finished split ")
+    
+    # Storing dataset_lists
+    split_file = Path(out_dataset_path) / "train.json"
+    with open(split_file.__str__(), 'w') as file:
+        json.dump(train_dict, file, indent=4)
+    
+    split_file = Path(out_dataset_path) / "validation.json"
+    with open(split_file.__str__(), 'w') as file:
+        json.dump(val_dict, file, indent=4)
+
+    split_file = Path(out_dataset_path) / "test.json"
+    with open(split_file.__str__(), 'w') as file:
+        json.dump(test_dict, file, indent=4)

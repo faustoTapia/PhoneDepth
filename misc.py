@@ -24,6 +24,7 @@ def load_newest_weights(model, checkpoint_dir, best_checkpoint=None):
             model.load_weights(newest_weights)
         print("Finished loading weights")
     else:
+        print("Could not load checkpoint from dir: {}".format(checkpoint_dir))
         if not os.path.exists(checkpoint_dir):
             os.makedirs(checkpoint_dir)
     return initial_epoch
