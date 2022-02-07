@@ -4,7 +4,7 @@ import tensorflow as tf
 from os import path
 import time
 
-from dataset_utils.phoneDepth_utils import phoneDepth_dataset
+from dataset_utils.phoneDepth_utils import phoneDepth_dataset, confidence_indeces
 from dataset_utils.mai_utils import mai_dataset
 from dataset_utils.md_utils import md_dataset
 from misc import load_newest_weights, setup_log
