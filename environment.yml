@@ -6,8 +6,12 @@ dependencies:
   - pip
   - numpy==1.19.2
   - tensorflow-gpu==2.4.1
+  - cudatoolkit=10.1
+  - tensorflow-probability=0.7
+  - matplotlib
+  - imageio
   - jupyterlab
   - tqdm
   - pip:
     - tensorflow-addons
-
+    - ipykernel
