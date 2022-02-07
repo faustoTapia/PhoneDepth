@@ -104,9 +104,11 @@ def mai_dataset(mai_dir, mode='train', input_shape=(480,640), batch_size=32, ran
     buffer_size = 96492
 
     if mode == 'train':
-        data_list_whole = load_data_list_from_file(path.join(mai_dir, 'train', mode+'.npy'))
+        data_list_whole = load_data_list_from_file(path.join(mai_dir, 'train', 'train.npy'))
     elif mode == 'val':
-        data_list_whole = load_data_list_from_file(path.join(mai_dir, 'train', mode+'.npy'))
+        data_list_whole = load_data_list_from_file(path.join(mai_dir, 'train', 'val.npy'))
+    elif mode == 'test':
+        data_list_whole = load_data_list_from_file(path.join(mai_dir, 'train', 'val.npy'))
     else:
         raise(ValueError('MAI Generator mode can only be: train or val. As test data only provided for these splits.'))
 

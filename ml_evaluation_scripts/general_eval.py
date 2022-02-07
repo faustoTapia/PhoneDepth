@@ -51,17 +51,15 @@ naming_dict = {'img2depth': "I2D",
 
 
 def main():
-    dataset = 'mb'
+    dataset = 'md'
     pretrain_datset = dataset
     cmap = 'viridis'
 
-    has_pynet = False
-
-    # mb_io_mode = 'img2depth'
+    mb_io_mode = 'img2depth'
     # mb_io_mode = "img2projected"
     # mb_io_mode = "img_depth2depth"
     # mb_io_mode = "img2depth_depth"
-    mb_io_mode = "img_depth2depth_depth"
+    # mb_io_mode = "img_depth2depth_depth"
     # mb_io_mode = None
     
     pre_training_dataset_store = dataset_store_paths[pretrain_datset]
@@ -80,17 +78,17 @@ def main():
     # Trained on MAI and fine-tunned
     # model_name = "p_fastdepth_mai_224x224"
     # model_name = "p_parkmai_mai_224x224"
-    # model_name = "p_effiB4park_mai_384x384"
-    # model_name = "p_fastdepth_mai_224x224_fineTuneMB"
+    # model_name = "p_effiB4park_mai_384x384"                                                                        ########################################################## COULD NOT LOAD
+    # model_name = "p_fastdepth_mai_224x224_fineTuneMB"                                                              ########################################################## could not load
     # model_name = "p_parkmai_mai_224x224_fineTuneMB"
-    # model_name = "p_effiB4park_mai_384x384_fineTuneMB"
+    # model_name = "p_effiB4park_mai_384x384_fineTuneMB"                                                               ########################################################### could not load
 
     # # Trained on MD and fine-tunned
-    # model_name = "p_fastdepth_md_224x224"
-    # model_name = "p_parkmai_md_224x224"             
+    model_name = "p_fastdepth_md_224x224"                                                                              ######################################################### COULD NOT LOAD
+    # model_name = "p_parkmai_md_224x224"       
     # model_name = "p_effiB4park_md_384x384"
     # model_name = "p_fastdepth_md_224x224_fineTuneMB"
-    # model_name = "p_parkmai_md_224x224_fineTuneMB"
+    # model_name = "p_parkmai_md_224x224_fineTuneMB"                                                                       ######################################################### COULD NOT LOAD
     # model_name = "p_effiB4park_md_384x384_fineTuneMB"
 
     # # For I2P and I2DP comparison.
@@ -103,7 +101,7 @@ def main():
 
     # # Depth enhancement.
     # model_name = "p_effiB4park_mbID2P_384x384"
-    model_name = "p_effiB4park_mbID2DP_384x384"
+    # model_name = "p_effiB4park_mbID2DP_384x384"
 
 
 
@@ -119,11 +117,11 @@ def main():
     n_imgs = None
 
     start_img = 0
-    # input_size = (224, 224, 3)
-    input_size = (384, 384, 3)
+    input_size = (224, 224, 3)
+    # input_size = (384, 384, 3)
 
-    dataset_type = 'test'   
-    # dataset_type = 'val'
+    dataset_type = 'test'
+    dataset_type = 'val'
     # dataset_type = 'train'
 
     tar_shape = input_size
