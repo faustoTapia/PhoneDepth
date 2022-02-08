@@ -23,8 +23,8 @@ naming_dict = {'img2depth': "I2D",
 
 # Change these variables to the location of the datasets in your Directory your base directories here!
 megadepth_basepath = Path('/srv/beegfs02/scratch/efficient_nn_mobile/data/MegaDepth_v1')
-mai_basepath = Path('/scratch_net/minga/tfausto/data/MAI2021_dataset')
-mb_basepath = Path('/scratch_net/minga/tfausto/data/PhoneDepth')
+mai_basepath = Path('/srv/beegfs02/scratch/efficient_nn_mobile/data/MAI2021_dataset')
+mb_basepath = Path('/srv/beegfs02/scratch/efficient_nn_mobile/data/PhoneDepth')
 
 dataset_paths = {'md': megadepth_basepath,  # Megadepth
                  'mai': mai_basepath,       # MAI
@@ -33,15 +33,15 @@ dataset_paths = {'md': megadepth_basepath,  # Megadepth
 interm_shape = (480,  640)
 
 """------------------------------------- Modify parameters according to need ------------------------------------------"""
-dataset = 'md'
+dataset = 'mb'
 # For Phone depth dataset (mb): "hua" or "pxl"
 phone = "hua"
 
 # mb_io_mode = 'img2depth'
-mb_io_mode = "img2projected"
+# mb_io_mode = "img2projected"
 # mb_io_mode = "img_depth2depth"
 # mb_io_mode = "img2depth_depth"
-# mb_io_mode = "img_depth2depth_depth"
+mb_io_mode = "img_depth2depth_depth"
 # mb_io_mode = None
 
 dataset_path = dataset_paths[dataset]
@@ -60,7 +60,7 @@ dataset_path = dataset_paths[dataset]
 # model_name = "p_parkmai_md_224x224"             
 # model_name = "p_effiB4park_md_384x384"
 # model_name = "p_fastdepth_md_224x224_fineTuneMB"
-model_name = "p_parkmai_md_224x224_fineTuneMB"
+# model_name = "p_parkmai_md_224x224_fineTuneMB"
 # model_name = "p_effiB4park_md_384x384_fineTuneMB"
 
 # # For I2P and I2DP comparison.
@@ -73,13 +73,13 @@ model_name = "p_parkmai_md_224x224_fineTuneMB"
 
 # # Depth enhancement.
 # model_name = "p_effiB4park_mbID2P_384x384"
-# model_name = "p_effiB4park_mbID2DP_384x384"
+model_name = "p_effiB4park_mbID2DP_384x384"
 
 batch_size = 9
 epochs = 120
 
 input_size = (224, 224, 3)
-# input_size = (384, 384, 3)
+input_size = (384, 384, 3)
 
 pretrained_weights = None
 
@@ -131,12 +131,12 @@ def main():
                                         num_parallel_calls=num_parallel_calls)
     elif dataset=='md':
         dataset_train = md_dataset(dataset_dir=data_path_str, partition_list='final_list', mode='train',
-                                    depth_type='npy', input_shape=input_size,
+                                    depth_type='npy', input_shape=input_size[:2],
                                     batch_size=batch_size, random_flip=True, shuffle=True,
                                     num_parallel_calls=num_parallel_calls)
 
         dataset_val = md_dataset(dataset_dir=data_path_str, partition_list='final_list', mode='val',
-                                    depth_type='npy', input_shape=input_size,
+                                    depth_type='npy', input_shape=input_size[:2],
                                     batch_size=batch_size, random_flip=False, shuffle=False,
                                     num_parallel_calls=num_parallel_calls)
     elif dataset=='mai':
