@@ -31,46 +31,7 @@ def depth_model(model_string, compile_strategy=None):
         raise ValueError("Model {} not found".format(model_string))
 
     return  model
-
-def dir_name_from_name(name):
-    if name in name_transf_dict.keys():
-        return name_transf_dict[name]
-    else:
-        return name
-
-name_transf_dict = {
-
-    # Trained on MAI and fine-tunned
-    "p_fastdepth_mai_224x224":                          "fastDepth_mai_224x224",
-    "p_parkmai_mai_224x224":                            "parkmai_mai_224x224",
-    "p_effiB4park_mai_384x384":                         "effnetB4parkmai_mai_384x384",
-    "p_fastdepth_mai_224x224_fineTuneMB":               "fastDepth_mai_fineTuneMBI2DP_224x224_lr5.0e-04",
-    "p_parkmai_mai_224x224_fineTuneMB":                 "park_mai_mai_fineTuneMBI2DP5e-04_224x224_lr5.0e-04",
-    "p_effiB4park_mai_384x384_fineTuneMB":              "effnetB4_I2PhuaDepth_parkmai_mai_fineTuneMBI2DP5e-04_v2_384x384_lr5.0e-04",
-
-    # Trained on MD and fine-tunned
-    "p_fastdepth_md_224x224":                          "fastDepth_md_224x224",
-    "p_parkmai_md_224x224":                            "park_mai_md_224x224",
-    "p_effiB4park_md_384x384":                         "effnetB4parkmai_md_384x384",
-    "p_fastdepth_md_224x224_fineTuneMB":               "fastDepth_md_fineTuneMBI2DP_224x224_lr5.0e-04",
-    "p_parkmai_md_224x224_fineTuneMB":                 "park_mai_md_fineTuneMBI2DP5e-04_224x224_lr5.0e-04",
-    "p_effiB4park_md_384x384_fineTuneMB":              "effnetB4_I2PhuaDepth_parkmai_md_fineTuneMBI2DP5e-04_384x384_lr5.0e-04",
-
-    # For I2P and I2DP comparison.
-    "p_fastdepth_mbI2P_224x224":                        "fastDepth_I2Phua_mb_224x224",
-    "p_parkmai_mbI2P_224x224":                          "park_mai_I2Phua_mb_224x224",
-    "p_effiB4park_mbI2P_384x384":                       "effnetB4_I2PhuaDepth_parkmai_mb_384x384",
-    "p_fastdepth_mbI2DP_224x224":                       "fastDepth_I2DPhua_mb_224x224_lr5.0e-04",
-    "p_parkmai_mbI2DP_224x224":                         "park_mai_I2DPhua_mb_224x224_lr5.0e-04",
-    "p_effiB4park_mbI2DP_384x384":                      "effnetB4_I2DPhuaDepth_parkmai_mb_384x384_v2",
-
-    # Depth enhancement.
-    "p_effiB4park_mbID2P_384x384":                      "effnetB4_ID2PhuaDepth_parkmai_mb_384x384",
-    "p_effiB4park_mbID2DP_384x384":                     "effnetB4_ID2DPhuaDepth_parkmai_mb_384x384"
-
-}
-        
-
+      
 final_models_checkpoints = {
 
     # Trained on MAI and fine-tunned

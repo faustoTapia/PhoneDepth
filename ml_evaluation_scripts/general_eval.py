@@ -51,7 +51,7 @@ naming_dict = {'img2depth': "I2D",
 
 
 def main():
-    dataset = 'md'
+    dataset = 'mai'
     pretrain_datset = dataset
     cmap = 'viridis'
 
@@ -76,19 +76,19 @@ def main():
 
     # Paper models
     # Trained on MAI and fine-tunned
-    # model_name = "p_fastdepth_mai_224x224"
+    model_name = "p_fastdepth_mai_224x224"
     # model_name = "p_parkmai_mai_224x224"
-    # model_name = "p_effiB4park_mai_384x384"                                                                        ########################################################## COULD NOT LOAD
-    # model_name = "p_fastdepth_mai_224x224_fineTuneMB"                                                              ########################################################## could not load
+    # model_name = "p_effiB4park_mai_384x384"                     ##
+    # model_name = "p_fastdepth_mai_224x224_fineTuneMB"         ##
     # model_name = "p_parkmai_mai_224x224_fineTuneMB"
-    # model_name = "p_effiB4park_mai_384x384_fineTuneMB"                                                               ########################################################### could not load
+    # model_name = "p_effiB4park_mai_384x384_fineTuneMB"        ##
 
     # # Trained on MD and fine-tunned
-    model_name = "p_fastdepth_md_224x224"                                                                              ######################################################### COULD NOT LOAD
+    # model_name = "p_fastdepth_md_224x224"                     ##
     # model_name = "p_parkmai_md_224x224"       
     # model_name = "p_effiB4park_md_384x384"
     # model_name = "p_fastdepth_md_224x224_fineTuneMB"
-    # model_name = "p_parkmai_md_224x224_fineTuneMB"                                                                       ######################################################### COULD NOT LOAD
+    # model_name = "p_parkmai_md_224x224_fineTuneMB"            ##
     # model_name = "p_effiB4park_md_384x384_fineTuneMB"
 
     # # For I2P and I2DP comparison.
@@ -110,7 +110,7 @@ def main():
 
     checkpoint_dir = weight_base_dir / Path(model_name)
 
-    checkpoint_dir = checkpoint_dir.__str__()
+    checkpoint_dir = str(checkpoint_dir)
     batch_size = 1
 
     # n_imgs = 500
