@@ -131,12 +131,12 @@ def main():
                                         num_parallel_calls=num_parallel_calls)
     elif dataset=='md':
         dataset_train = md_dataset(dataset_dir=data_path_str, partition_list='final_list', mode='train',
-                                    depth_type='npy', input_shape=input_size[:2],
+                                    depth_type='h5', input_shape=input_size[:2],
                                     batch_size=batch_size, random_flip=True, shuffle=True,
                                     num_parallel_calls=num_parallel_calls)
 
         dataset_val = md_dataset(dataset_dir=data_path_str, partition_list='final_list', mode='val',
-                                    depth_type='npy', input_shape=input_size[:2],
+                                    depth_type='h5', input_shape=input_size[:2],
                                     batch_size=batch_size, random_flip=False, shuffle=False,
                                     num_parallel_calls=num_parallel_calls)
     elif dataset=='mai':
