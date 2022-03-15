@@ -41,7 +41,7 @@ Download and extract [MegaDepth V1](https://www.cs.cornell.edu/projects/megadept
 Download Publicly available data on: [Mobile AI](https://competitions.codalab.org/competitions/28122). You will need to be signed-in to access the data. Extrace the dataset from the compressed file. Then you should include the data-lists corresponding to `MAI` in the previous section. You want to have a file structure as follows:
 
 ```bash
-MAI2021_depth_dir (as downloaded or you name it)
+MAI2021_depth_dir (as per downloaded or how you named it)
 └── train
     ├── rgb
     ├── depth
@@ -53,18 +53,32 @@ MAI2021_depth_dir (as downloaded or you name it)
 Download dataset available in [PhoneDepth](placeholder). Extract it and place the `PhoneDepth` data-lists in the root directory of the dataset. You want to have a file structure as follows:
 
 ```bash
-PhoneDepth (as downloaded or you name it)
-└── train
-    ├── hua
-    ├── networks
-    ├── p_depth_logs
-    ├── p_eval_outputs
-    ├── p_networks
-    ├── test_list.json
-    ├── train_lists.json
-    └── validation_list.json
+PhoneDepth (as per downloaded or how you named it)
+├── hua
+├── networks
+├── p_depth_logs
+├── p_eval_outputs
+├── p_networks
+├── test_list.json
+├── train_lists.json
+└── validation_list.json
 ```
 
 ## Content Description
+Here we describe the contents and the file structure of this repository.
+----------------------- ------------------------------------
+- ***dataset_utils***
+- ***ml_evaluation_scripts***
+- ***ml_training_scripts***
+- ***models***
+- ***notebooks_testing***
+- ***plotting***
+- ***unit_tests***
+- ***custom_callbacks.py***
+- ***depth_utils.py***
+- ***environment.yml***
+- ***misc.py***
+----------------------------------------------------------------
+
 ### Training
 ### Evaluation
