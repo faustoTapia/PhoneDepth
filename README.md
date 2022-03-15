@@ -67,17 +67,17 @@ PhoneDepth (as per downloaded or how you named it)
 ## Content Description
 Here we describe the contents and the file structure of this repository.
 ----------------------- ------------------------------------
-- ***dataset_utils***
-- ***ml_evaluation_scripts***
-- ***ml_training_scripts***
-- ***models***
-- ***notebooks_testing***
-- ***plotting***
-- ***unit_tests***
-- ***custom_callbacks.py***
-- ***depth_utils.py***
-- ***environment.yml***
-- ***misc.py***
+- ***dataset_utils***: Includes data loading related functionalities including data loaders, data list generation (Megadepth), augmentation and visualizaiton.
+- ***ml_evaluation_scripts***: Includes a script to perform evaluation In all datasets.
+- ***ml_training_scripts***: Includes scripts used to train our models and a script for generic training (`general_train.py`) which you should refer to for training.
+- ***models***: Contains models deffinitions and utilities to construct them. You should refer to `models.py` as an entry point.
+- ***notebooks_testing***: Notebooks used for a variety of purposes, mainly visualizing datasets.
+- ***plotting***: Utilities to plot significant data corresponding to results.
+- ***unit_tests***: Unit testing, primarlly for models and augmentaiton.
+- ***custom_callbacks.py**: Custom callback functions to use during evaluation (To extract also some examples).
+- ***depth_utils.py***: Loss and metric functions for training and evaluation.
+- ***environment.yml***: description of Conda environment.
+- ***misc.py***: Logging related functions.
 ----------------------------------------------------------------
 
 ### Training
