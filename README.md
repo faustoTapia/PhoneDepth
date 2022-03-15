@@ -97,3 +97,16 @@ In both sripts please change the following variables accordingly options:
 - `model_name`: Name of the model to be loaded. All the models used for the paper are listed (commented out) in the eval/train file.
 - `input_size`: 3-tuple with input dimentions. Should be (x, x, 3), x representing widht and height of the image.
 - `pretrained_weights`: Pretrained weights to load to start from.
+
+### Dataset samples
+Here we provide with some samples from the dataset. The samples collect the following information in top to bottom order: 
+1. Phone image
+2. Phone sensor depth
+3. Stereo based depth
+4. Confidence map for stereo based depth
+
+| Huawei Phone      | Pxl Phone      |
+|------------|-------------|
+|
+![Sample 1](sample_imgs/sample_01.jpg)|![Sample 2](sample_imgs/sample_02.jpg)
+|
