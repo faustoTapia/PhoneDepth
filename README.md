@@ -99,14 +99,14 @@ In both sripts please change the following variables accordingly options:
 - `pretrained_weights`: Pretrained weights to load to start from.
 
 ### Dataset samples
-Here we provide with some samples from the dataset. The samples collect the following information in top to bottom order: 
+Here we provide with some samples from the dataset. The samples collect the following information in top to bottom order for both Huawei and Pxl phones:
 1. Phone image
 2. Phone sensor depth
 3. Stereo based depth
 4. Confidence map for stereo based depth
 
-| Huawei Phone      | Pxl Phone      |
-|------------|-------------|
-|
-![Sample 1](sample_imgs/sample_01.jpg)|![Sample 2](sample_imgs/sample_02.jpg)
-|
+Sample 1
+![Sample 1](sample_imgs/sample_01.jpg)
+
+Sample 2
+![Sample 2](sample_imgs/sample_02.jpg)
