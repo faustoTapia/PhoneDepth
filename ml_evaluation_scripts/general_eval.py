@@ -78,17 +78,17 @@ def main():
     # Trained on MAI and fine-tunned
     model_name = "p_fastdepth_mai_224x224"
     # model_name = "p_parkmai_mai_224x224"
-    # model_name = "p_effiB4park_mai_384x384"                     ##
-    # model_name = "p_fastdepth_mai_224x224_fineTuneMB"         ##
+    # model_name = "p_effiB4park_mai_384x384"
+    # model_name = "p_fastdepth_mai_224x224_fineTuneMB"
     # model_name = "p_parkmai_mai_224x224_fineTuneMB"
-    # model_name = "p_effiB4park_mai_384x384_fineTuneMB"        ##
+    # model_name = "p_effiB4park_mai_384x384_fineTuneMB"
 
     # # Trained on MD and fine-tunned
-    # model_name = "p_fastdepth_md_224x224"                     ##
+    # model_name = "p_fastdepth_md_224x224"
     # model_name = "p_parkmai_md_224x224"       
     # model_name = "p_effiB4park_md_384x384"
     # model_name = "p_fastdepth_md_224x224_fineTuneMB"
-    # model_name = "p_parkmai_md_224x224_fineTuneMB"            ##
+    # model_name = "p_parkmai_md_224x224_fineTuneMB"
     # model_name = "p_effiB4park_md_384x384_fineTuneMB"
 
     # # For I2P and I2DP comparison.
