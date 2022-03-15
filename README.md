@@ -108,4 +108,4 @@ Here we provide with some samples from the dataset. The samples collect the foll
 | Huawei Phone      | Pxl Phone      |
 |------------|-------------|
 |
-![Sample 1](sample_imgs/sample_01.jpg) | ![Sample 2](sample_imgs/sample_02.jpg) |
+![Sample 1](sample_imgs/sample_01.jpg)|![Sample 2](sample_imgs/sample_02.jpg)|
