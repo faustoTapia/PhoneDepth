@@ -80,5 +80,20 @@ Here we describe the contents and the file structure of this repository.
 - ***misc.py***: Logging related functions.
 ----------------------------------------------------------------
 
-### Training
-### Evaluation
+### Training and Evaluation
+
+Two scripts can be used for you to train and evaluate on the mentioned datasets:
+- `ml_training_scripts/general_train.py`
+- `ml_evaluation_scripts/general_eval.py`
+
+In both sripts please change the following variables accordingly options:
+- `megadepth_basepath`: Base path of megadepth dataset.
+- `mai_basepath`: Base path of MAI dataset.
+- `mb_basepath`: Base path of PhoneDepth dataset.
+- `dataset`: dataset to use. one of: 
+    - `md`: MegaDepth
+    - `mai`: MAI
+    - `mb`: PhoneDepth
+- `model_name`: Name of the model to be loaded. All the models used for the paper are listed (commented out) in the eval/train file.
+- `input_size`: 3-tuple with input dimentions. Should be (x, x, 3), x representing widht and height of the image.
+- `pretrained_weights`: Pretrained weights to load to start from.
