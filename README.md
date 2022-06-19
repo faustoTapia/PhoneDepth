@@ -1,5 +1,5 @@
 # PhoneDepth
-PhoneDepth: Dataset toolbox and documentation for the paper submitted to IJCAI 2022.
+PhoneDepth: Dataset toolbox and documentation for the paper of MAI2022 workshop.
 
 
 ## Development setup
@@ -38,7 +38,7 @@ The data lists corresponding representing the splits used to acquire this paper'
 ### Megadepth
 Download and extract [MegaDepth V1](https://www.cs.cornell.edu/projects/megadepth/) dataset. Place the `MegaDepth` data-set list directory contents inside the top level directory of the dataset after extracting. 
 ### Mobile AI (MAI)
-Download Publicly available data on: [Mobile AI](https://competitions.codalab.org/competitions/28122). You will need to be signed-in to access the data. Extrace the dataset from the compressed file. Then you should include the data-lists corresponding to `MAI` in the previous section. You want to have a file structure as follows:
+Download Publicly available data on: [Mobile AI](https://competitions.codalab.org/competitions/28122). You will need to be signed-in to access the data. Extract the dataset from the compressed file. Then you should include the data-lists corresponding to `MAI` in the previous section. You want to have a file structure as follows:
 
 ```bash
 MAI2021_depth_dir (as per downloaded or how you named it)
@@ -68,7 +68,7 @@ PhoneDepth (as per downloaded or how you named it)
 Here we describe the contents and the file structure of this repository.
 ----------------------- ------------------------------------
 - ***dataset_utils***: Includes data loading related functionalities including data loaders, data list generation (Megadepth), augmentation and visualizaiton.
-- ***ml_evaluation_scripts***: Includes a script to perform evaluation In all datasets.
+- ***ml_evaluation_scripts***: Includes a script to perform evaluation in all datasets.
 - ***ml_training_scripts***: Includes scripts used to train our models and a script for generic training (`general_train.py`) which you should refer to for training.
 - ***models***: Contains models deffinitions and utilities to construct them. You should refer to `models.py` as an entry point.
 - ***notebooks_testing***: Notebooks used for a variety of purposes, mainly visualizing datasets.
