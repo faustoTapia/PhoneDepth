@@ -50,11 +50,13 @@ MAI2021_depth_dir (as per downloaded or how you named it)
 ```
 
 ### PhoneDepth
-Download dataset available in [PhoneDepth](placeholder). Extract it and place the `PhoneDepth` data-lists in the root directory of the dataset. You want to have a file structure as follows:
+Download dataset available in [PhoneDepth](https://1drv.ms/u/s!AtBy787Dz0tDl_hJuJxc-42NfLQilA?e=QYFQ9M). Extract it and place the `PhoneDepth` data-lists in the root directory of the dataset. You want to have a file structure as follows:
 
 ```bash
 PhoneDepth (as per downloaded or how you named it)
 ├── hua
+├── pxl
+├── depth_logs
 ├── networks
 ├── p_depth_logs
 ├── p_eval_outputs
