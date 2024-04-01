@@ -19,7 +19,7 @@ Note that the key dependencies are:
 We recommend you keep all the datasets under the same directory (`*/data`), although it is not necesary.
 
 ### Data-set lists
-The data lists corresponding representing the splits used to acquire this paper's results can be downloaded from [here](https://drive.google.com/file/d/1uDzpz-pVIPAnabLigE1ThwF40QbhfI6-/view?usp=sharing).  It is composes of the following directory structure whear each superficial directory corresponds to each dataset:
+The data lists corresponding representing the splits used to acquire this paper's results can be downloaded from [here](https://1drv.ms/u/s!AtG9ZoXQaQn7gogZBDDLx2fpgR5KLA?e=WORDqn).  It is composes of the following directory structure whear each superficial directory corresponds to each dataset:
 
 ```bash
 ├── MAI
